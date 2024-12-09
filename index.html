@@ -32,8 +32,8 @@
 
         // โหลดภาพ 360 องศา
         const textureLoader = new THREE.TextureLoader();
-        textureLoader.load("louis-reed-hzp_aT02R48-unsplash.jpg
-", (texture) => {
+        textureLoader.load('louis-reed-hzp_aT02R48-unsplash.jpg
+', (texture) => {
             const geometry = new THREE.SphereGeometry(500, 60, 40);
             const material = new THREE.MeshBasicMaterial({ map: texture });
             const mesh = new THREE.Mesh(geometry, material);
