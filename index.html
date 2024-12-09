@@ -31,7 +31,7 @@
 
         // Load 360-degree image
         const textureLoader = new THREE.TextureLoader();
-        textureLoader.load('360image.jpg', (texture) => {
+        textureLoader.load('new360image.jpg', (texture) => {
             const geometry = new THREE.SphereGeometry(500, 60, 40);
             const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
             const mesh = new THREE.Mesh(geometry, material);
