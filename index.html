@@ -3,9 +3,9 @@
 <head>
     <title>Image from GitHub Pages</title>
     <link rel="stylesheet" href="style.css">
+    <script src="three.js"></script>
 </head>
 <body>
-    <title>House</title>
     <h2>หน้าบ้าน</h2>
     <div class="image-gallery">
         <img src="หน้าบ้าน1.jpg" width="500" height="300" >
@@ -18,5 +18,33 @@
         <img src="หลังบ้าน2.jpg" width="500" height="300" >
         <img src="หลังบ้าน3.jpg" width="500" height="300" >
     </div>
+    
+    <div id="panorama"></div>
+    <script>
+        // สร้างฉาก 3 มิติ
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+        // สร้าง renderer
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('panorama').appendChild(renderer.domElement);
+
+        // โหลดภาพ 360 องศา
+        const textureLoader = new THREE.TextureLoader();
+        textureLoader.load('louis-reed-hzp_aT02R48-unsplash.jpg', (texture) => {
+            const geometry = new THREE.SphereGeometry(500, 60, 40);
+            const material = new THREE.MeshBasicMaterial({ map: texture });
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+        });
+
+        // อัปเดตฉาก
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
 </body>
 </html>
