@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Image from GitHub Pages</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 Image Viewer</title> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"> 
+    <link rel="stylesheet" href="style.css"> <!-- Your custom stylesheet -->
+   <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 </head>
 <body>
     <h2>หน้าบ้าน</h2>
@@ -17,36 +20,13 @@
         <img src="หลังบ้าน2.jpg" width="500" height="300" >
         <img src="หลังบ้าน3.jpg" width="500" height="300" >
     </div>
-    
-    <div id="panorama"></div>
+    <div id="panorama" style="width: 100%; height: 500px;"></div>
     <script>
-        // Create a 3D scene
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-        // Create renderer
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.getElementById('panorama').appendChild(renderer.domElement);
-
-        // Load 360-degree image
-        const textureLoader = new THREE.TextureLoader();
-        textureLoader.load('new360image.jpg', (texture) => {
-            const geometry = new THREE.SphereGeometry(500, 60, 40);
-            const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
-            const mesh = new THREE.Mesh(geometry, material);
-            scene.add(mesh);
+        pannellum.viewer('panorama', {
+            "type": "equirectangular",
+            "panorama": "new360image.jpg",
+            "autoLoad": true
         });
-
-        // Set camera position
-        camera.position.set(0, 0, 0.1);
-
-        // Update scene
-        function animate() {
-            requestAnimationFrame(animate);
-            renderer.render(scene, camera);
-        }
-        animate();
     </script>
 </body>
 </html>
