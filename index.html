@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>360 Image Viewer</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
     <link rel="stylesheet" href="style.css"> <!-- Your custom stylesheet -->
-    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <style> footer { text-align: center; margin-top: 20px; font-style: italic; } </style>   
 </head>
 <body>
     <h2>หน้าบ้าน</h2>
@@ -20,48 +19,14 @@
         <img src="หลังบ้าน2.jpg" width="500" height="300" >
         <img src="หลังบ้าน3.jpg" width="500" height="300" >
     </div>
+    <h2> ชั้น 1 </h2>
+    <img src="outsidefrontdoor.jpg" width="500" height="300" >
+    <footer> บริเวณก่อนเข้าประตูด้านหน้า </footer>
     <video width="600" controls> <source src="walktofloor2.mp4" type="video/mp4"> 
         Your browser does not support the video tag. </video>
     <video width="600" controls> <source src="surveyfloor2.mp4" type="video/mp4"> 
         Your browser does not support the video tag. </video>
     
-    <script>
-        pannellum.viewer('panorama', {
-            "default": {
-                "firstScene": "scene1",
-                "autoLoad": true
-            },
-            "scenes": {
-                "scene1": {
-                    "type": "equirectangular",
-                    "panorama": "tile.jpg",
-                    "hotSpots": [
-                        {
-                            "pitch": 0, // Adjust pitch
-                            "yaw": 0, // Adjust yaw
-                            "type": "scene",
-                            "text": "Go to Scene 2",
-                            "sceneId": "scene2"
-                        }
-                    ]
-                },
-                "scene2": {
-                    "type": "equirectangular",
-                    "panorama": "new360image.jpg",
-                    "hotSpots": [
-                        {
-                            "pitch": 0, // Adjust pitch
-                            "yaw": 180, // Adjust yaw
-                            "type": "scene",
-                            "text": "Go to Scene 1",
-                            "sceneId": "scene1"
-                        }
-                    ]
-                }
-            }
-        });
-    </script>
-    <iframe src="https://www.google.com/maps/embed?pb=!4v1733824297849!6m8!1m7!1shxNss6BfaGwAAAQINSRT2g!2m2!1d24.4122415781699!2d54.47568582459631!3f331.0614529659147!4f-3.23631633764505!5f0.7820865974627469"
-        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</body>
+    
+   </body>
 </html>
