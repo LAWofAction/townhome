@@ -22,10 +22,25 @@
             }
     </style>
         <script> function openImageInNewWindow(src) { 
-           var newWindow = window.open("", "_blank"); 
-           newWindow.document.write('<html><head><title>ภาพขยาย</title></head>
-           <body style="margin:0; display:flex; align-items:center; justify-content:center;">
-           <img src="' + src + '" style="width:100%; height:auto;"></body></html>');
+        var newWindow = window.open("", "_blank");
+           newWindow.onload = function() { // Ensure the new window is loaded
+        var img = newWindow.document.createElement('img');
+        img.src = src;
+        img.style.maxWidth = '100%';
+        img.style.maxHeight = '100%';
+        img.style.display = 'block'; // prevent small gap
+        img.style.margin = 'auto'; // center the image
+        newWindow.document.body.style.margin = '0';
+        newWindow.document.body.style.display = 'flex';
+        newWindow.document.body.style.alignItems = 'center';
+        newWindow.document.body.style.justifyContent = 'center';
+        newWindow.document.body.style.backgroundColor = '#000';
+        newWindow.document.body.appendChild(img);
+           newWindow.document.title = "ภาพขยาย"; // Set the title after the window is loaded.
+    };
+}
+          newWindow.document.write('<html><head><title>ภาพขยาย</title></head><body style="margin:0; display:flex; align-items:center; justify-content:center; 
+          background-color: #000;"><img src="' + src + '" style="max-width: 100%; max-height: 100%;"></body></html>');
                newWindow.document.close(); } 
         </script>
     
