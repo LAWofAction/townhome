@@ -20,30 +20,7 @@
             { 
             cursor: pointer;
             }
-    </style>
-        <script> function openImageInNewWindow(src) { 
-        var newWindow = window.open("", "_blank");
-           newWindow.onload = function() { // Ensure the new window is loaded
-        var img = newWindow.document.createElement('img');
-        img.src = src;
-        img.style.maxWidth = '100%';
-        img.style.maxHeight = '100%';
-        img.style.display = 'block'; // prevent small gap
-        img.style.margin = 'auto'; // center the image
-        newWindow.document.body.style.margin = '0';
-        newWindow.document.body.style.display = 'flex';
-        newWindow.document.body.style.alignItems = 'center';
-        newWindow.document.body.style.justifyContent = 'center';
-        newWindow.document.body.style.backgroundColor = '#000';
-        newWindow.document.body.appendChild(img);
-           newWindow.document.title = "ภาพขยาย"; // Set the title after the window is loaded.
-    };
-}
-          newWindow.document.write('<html><head><title>ภาพขยาย</title></head><body style="margin:0; display:flex; align-items:center; justify-content:center; 
-          background-color: #000;"><img src="' + src + '" style="max-width: 100%; max-height: 100%;"></body></html>');
-               newWindow.document.close(); } 
-        </script>
-    
+    </style>    
 </head>
 <body>
     <h1>หน้าบ้าน</h1>
@@ -51,18 +28,31 @@
         <a href="หน้าบ้าน1.jpg" target="_blank">
         <img src="หน้าบ้าน1.jpg" >
         </a>
-        <img src="หน้าบ้าน2.jpg" width="600" height="400" >
+        <a href="หน้าบ้าน2.jpg" target="_blank">
+        <img src="หน้าบ้าน2.jpg" >
+        </a>
+        
     </div>
     <h1>หลังบ้าน</h1>
     <div class="image-gallery"> 
-        <img src="หลังบ้าน1.jpg" width="600" height="400" onclick="openImageInNewWindow('หลังบ้าน1.jpg') "> 
-        <img src="หลังบ้าน2.jpg" width="600" height="400" onclick="openImageInNewWindow('หลังบ้าน2.jpg') "> 
-        <img src="หลังบ้าน3.jpg" width="600" height="400" onclick="openImageInNewWindow('หลังบ้าน3.jpg') "> 
+        <a href="หลังบ้าน1.jpg" target="_blank">
+           <img src="หลังบ้าน1.jpg" width="600" height="400" >
+        </a>
+        <a href="หลังบ้าน2.jpg" target="_blank">
+           <img src="หลังบ้าน2.jpg" width="600" height="400" >
+        </a>
+        <a href="หลังบ้าน3.jpg" target="_blank">
+           <img src="หลังบ้าน3.jpg" width="600" height="400" >
+        </a>
     </div>   
     <h1> ชั้น 1 </h1>
-    <img src="outsidefrontdoor.jpg" width="800" height="600" >
-    <footer> บริเวณก่อนเข้าประตูหน้าบ้าน </footer>
-    <img src="firstfloor.jpg" width="800" height="600" >
+        <a href="outsidefrontdoor.jpg" target="_blank">
+           <img src="outsidefrontdoor.jpg" width="600" height="400" >
+        </a>
+     <footer> บริเวณก่อนเข้าประตูหน้าบ้าน </footer>
+        <a href="firstfloor.jpg" target="_blank">
+           <img src="firstfloor.jpg" width="600" height="400" >
+        </a>
     <footer> บริเวณชั้น1 เมื่อผ่านประตูหน้าบ้าน </footer>
 
     <h1> ชั้น 2 </h1>
